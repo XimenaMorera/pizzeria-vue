@@ -15,6 +15,9 @@ const routes = [
      { path: '/pizzas/new',
        name: 'NewPizza', 
        component: NewPizza },
+       { path: "/ingredients", name: "Ingredients", component: Ingredient },
+       { path: "/ingredients/new", name: "NewIngredient", component: NewIngredient },
+       { path: "/ingredients/:id/edit", name: "EditarIngredient", component: EditarIngredient },
 
 
   {
