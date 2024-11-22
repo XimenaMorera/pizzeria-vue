@@ -78,5 +78,44 @@
         this.$router.push({ name: "NewCliente" });
       },
       navegarEditarCliente(id) {
-       
+        this.$router.push({ name: "EditarCliente", params: { id } });
+      },
+      eliminarCliente(id) {
+        Swal.fire({
+          title: "¿Estás seguro?",
+          text: "Esta acción eliminará al cliente.",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Sí, eliminar",
+          cancelButtonText: "Cancelar",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            axios
+              .delete(`http://127.0.0.1:8000/api/clients/${id}`)
+              .then(() => {
+                Swal.fire({
+                  icon: "success",
+                  title: "Cliente eliminado",
+                  showConfirmButton: false,
+                  timer: 2000,
+                });
+                this.obtenerClientes();
+              })
+              .catch((error) => {
+                console.error(error);
+                Swal.fire({
+                  icon: "error",
+                  title: "Error",
+                  text: "No se pudo eliminar el cliente",
+                });
+              });
+          }
+        });
+      },
+    },
+    created() {
+      this.obtenerClientes();
+    },
+  };
+  </script>
   
