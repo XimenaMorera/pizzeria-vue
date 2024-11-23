@@ -4,6 +4,9 @@ import Pizza from '@/views/Pizza.vue';
 import Cliente from '../views/Cliente.vue';
 import OrderView from '../views/OrderView.vue';
 import Employee from '../views/Employee.vue';
+import Supplier from '../views/SupplierView.vue';
+
+
 
 const routes = [
   {
