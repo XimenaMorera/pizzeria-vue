@@ -1,6 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Pizza from '@/views/Pizza.vue';
+import Cliente from '../views/Cliente.vue';
+import OrderView from '../views/OrderView.vue';
+import Employee from '../views/Employee.vue';
 
 const routes = [
   {
@@ -26,7 +29,42 @@ const routes = [
        { path: "/suppliers", name: "Suppliers", component: Supplier },
        { path: "/suppliers/new", name: "NewSupplier", component: NewSupplier },
        { path: "/suppliers/:id/edit", name: "EditarSupplier", component: EditarSupplier },
-
+       
+       {
+        path: '/clients',
+        name: 'Clients',
+        component: Cliente
+      },  
+      {
+        path: '/Employee',
+        name: 'Employee',
+        component: Employee
+      },  
+      {
+        path: '/Employees/new',
+        name: 'NewEmployee',
+        component: NewEmployee
+      },
+      {
+        path: '/employees/:id/edit',
+        name: 'EditarEmployee',
+        component: EditarEmployee
+      },
+      {
+        path: '/orders',
+        name: 'Orders',
+        component: OrderView
+      },
+      {
+        path: '/orders/:id/edit',
+        name: 'EditarOrder',
+        component: EditarOrder
+      },
+      {
+        path: '/orders/new',
+        name: 'NewOrder',
+        component: NewOrder
+      },
 
   {
     path: '/about',
